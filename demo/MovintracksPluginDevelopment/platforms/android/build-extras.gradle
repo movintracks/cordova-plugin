@@ -1,0 +1,32 @@
+repositories {
+    mavenCentral()
+    flatDir{
+          dirs 'libs'
+    }
+}
+
+dependencies {    
+    compile(name:'sdk-movintracks', ext:'aar')
+    compile(name:'sdk-facebook', ext:'aar')
+    compile(name:'androidBeaconLibrary', ext:'aar')
+    compile 'com.android.support:support-v4:19.1.0'
+    compile ('com.google.code.gson:gson:2.2.4') {
+        exclude (group: 'org.apache.httpcomponents', module: 'httpclient')
+    }
+    compile ('com.octo.android.robospice:robospice-google-http-client:1.4.12') {
+        exclude (group: 'org.apache.httpcomponents', module: 'httpclient')
+    }
+    compile 'com.google.http-client:google-http-client-gson:1.19.0'
+    compile 'com.google.android.gms:play-services:4.4.52'
+    compile 'com.google.guava:guava:16.0.1'
+    compile 'org.twitter4j:twitter4j-async:4.0.1'
+    compile 'org.twitter4j:twitter4j-core:4.0.1'
+    compile 'org.twitter4j:twitter4j-media-support:4.0.1'
+}
+
+android {
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}

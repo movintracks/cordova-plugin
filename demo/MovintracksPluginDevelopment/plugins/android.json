@@ -1,0 +1,130 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"MovintracksPlugin\"><param name=\"android-package\" value=\"com.movintracks.cordovamovintracks.MovintracksPlugin\" /></feature>",
+                            "count": 3
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.google.android.c2dm.permission.RECEIVE\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<permission android:name=\"io.movintracks.demo.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"io.movintracks.demo.permission.C2D_MESSAGE\" />",
+                            "count": 3
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:label=\"\" android:name=\"com.movintracks.cordovamovintracks.WebViewActivity\"></activity>",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.movintracks.cordovamovintracks.remoteNotifications.GcmBroadcastReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><category android:name=\"io.movintracks.demo\" /></intent-filter></receiver>",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<service android:name=\"com.movintracks.cordovamovintracks.remoteNotifications.GcmIntentService\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"com.facebook.sdk.ApplicationId\" android:value=\"@string/fb_app_id\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<activity android:name=\"com.facebook.LoginActivity\" />",
+                            "count": 1
+                        }
+                    ],
+                    "application/activity": [
+                        {
+                            "xml": "<intent-filter><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.DEFAULT\" /><category android:name=\"android.intent.category.BROWSABLE\" /><data android:host=\"t4jsample\" android:scheme=\"oauth\" /></intent-filter>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "res/values/facebook_id.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<string name=\"fb_app_id\">639549046141947</string>",
+                            "count": 2
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "io.movintracks.demo"
+        },
+        "com.movintracks.cordovamovintracks": {
+            "FACEBOOK_ID": "639549046141947",
+            "PACKAGE_NAME": "io.movintracks.demo"
+        }
+    },
+    "dependent_plugins": {}
+}
