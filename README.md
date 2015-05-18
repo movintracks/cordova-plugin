@@ -5,7 +5,11 @@ A cordova plugin for the Movintracks SDK that brings the power of interactive ca
 
 - Cordova 3.0+
 - Android and iOS
- 
+
+Get your license here: http://movintracks.io/pricing/
+A 2 minute tutorial on Movintracks: https://www.youtube.com/watch?v=9voTkCJH9jk
+Watch what others are doing with beacons at iBeaconsblog weekly news: https://www.youtube.com/playlist?list=PLF0aZiQ6l2beFt9tghPM0ggND_vuIcEK6
+
 Installation
 ------------
 Add the plugin to a project.
