@@ -5,11 +5,14 @@ A cordova plugin for the Movintracks SDK that brings the power of interactive ca
 
 - Cordova 3.0+
 - Android and iOS
+ 
+ 
+Get your license here: http://movintracks.io/pricing/ 
 
-Get your license here: http://movintracks.io/pricing/
-A 2 minute tutorial on Movintracks: https://www.youtube.com/watch?v=9voTkCJH9jk
+A 2 minute tutorial on Movintracks: https://www.youtube.com/watch?v=9voTkCJH9jk 
+
 Watch what others are doing with beacons at iBeaconsblog weekly news: https://www.youtube.com/playlist?list=PLF0aZiQ6l2beFt9tghPM0ggND_vuIcEK6
-
+ 
 Installation
 ------------
 Add the plugin to a project.
@@ -128,6 +131,10 @@ Compiling for Android requires Gradle:
 - Add to `MainActivity.java`, before the `onCreate()` method:
 
         private UiLifecycleHelper uiHelper;
+        
+- Add to `MainActivity.java`, in the `onCreate()` method:
+
+        uiHelper = new UiLifecycleHelper(this, null);
 
 - Add to `MainActivity.java`, after the `onCreate(...)` method:
 
