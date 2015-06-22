@@ -11,7 +11,7 @@
 #import <AddressBook/AddressBook.h>
 
 #define kLocalizedTable @"MTMovintracks"
-#define kSdkVersionText	@"1.7"
+#define kSdkVersionText	@"1.8"
 
 typedef void (^MTOnFacebookWebLogin)(BOOL); /**< Code block to manage When user was login to webview */
 typedef void (^MTRequestCompletionHandler)(BOOL, NSError*); /**< Code block to manage when a request was completed */

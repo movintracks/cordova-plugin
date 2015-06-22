@@ -7,7 +7,7 @@ repositories {
 
 dependencies {    
     compile(name:'sdk-movintracks', ext:'aar')
-    compile(name:'sdk-facebook', ext:'aar')
+    compile 'com.facebook.android:facebook-android-sdk:4.1.1'
     compile(name:'androidBeaconLibrary', ext:'aar')
     compile 'com.android.support:support-v4:22.0.0'
     compile 'com.google.code.gson:gson:2.3'
@@ -20,8 +20,8 @@ dependencies {
     compile 'org.twitter4j:twitter4j-async:4.0.1'
     compile 'org.twitter4j:twitter4j-core:4.0.1'
     compile 'org.twitter4j:twitter4j-media-support:4.0.1'
-    compile 'com.google.android.gms:play-services-location:7.0.0'
-    compile 'com.google.android.gms:play-services-gcm:7.0.0'
+    compile 'com.google.android.gms:play-services-location:7.5.0'
+    compile 'com.google.android.gms:play-services-gcm:7.5.0'
     compile 'com.google.guava:guava:18.0'
 }
 

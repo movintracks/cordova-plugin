@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="com.movintracks.cordovamovintracks"
-        version="1.2">
+        version="1.3">
     <engines>
         <engine name="cordova" version=">=3.0.0" />
     </engines>
@@ -25,7 +25,6 @@
         <preference name="FACEBOOK_ID" />
 
         <source-file src="src/android/libs/androidBeaconLibrary.aar" target-dir="libs" framework="true" />
-        <source-file src="src/android/libs/sdk-facebook.aar" target-dir="libs" framework="true" />
         <source-file src="src/android/libs/sdk-movintracks.aar" target-dir="libs" framework="true" />
         <source-file src="src/android/src/LocalConstants.java" target-dir="src/com/movintracks/cordovamovintracks" />
         <source-file src="src/android/src/MovintracksPlugin.java" target-dir="src/com/movintracks/cordovamovintracks" />
@@ -73,7 +72,7 @@
                 android:name="com.movintracks.cordovamovintracks.WebViewActivity"
                 android:label="">
             </activity>
-            <activity android:name="com.facebook.LoginActivity" />
+            <activity android:name="ccom.facebook.FacebookActivity" />
             <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/fb_app_id" />
             <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 
