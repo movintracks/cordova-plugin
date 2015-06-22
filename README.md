@@ -123,51 +123,6 @@ Compiling for Android requires Gradle:
 
         android:name="com.movintracks.cordovamovintracks.MovintracksApp"
 
-- Add these imports to `MainActivity.java`:
-
-        import com.facebook.UiLifecycleHelper;
-        import android.content.Intent;
-
-- Add to `MainActivity.java`, before the `onCreate()` method:
-
-        private UiLifecycleHelper uiHelper;
-        
-- Add to `MainActivity.java`, in the `onCreate()` method:
-
-        uiHelper = new UiLifecycleHelper(this, null);
-
-- Add to `MainActivity.java`, after the `onCreate(...)` method:
-
-        @Override
-        public void onResume() {
-            super.onResume();
-            uiHelper.onResume();
-        }
-
-        @Override
-        public void onActivityResult(int requestCode, int resultCode, Intent data) {
-            super.onActivityResult(requestCode, resultCode, data);
-            uiHelper.onActivityResult(requestCode, resultCode, data);
-        }
-
-        @Override
-        public void onPause() {
-            super.onPause();
-            uiHelper.onPause();
-        }
-
-        @Override
-        public void onDestroy() {
-            super.onDestroy();
-            uiHelper.onDestroy();
-        }
-
-        @Override
-        public void onSaveInstanceState(Bundle outState) {
-            super.onSaveInstanceState(outState);
-            uiHelper.onSaveInstanceState(outState);
-        }
-
 - If you would like to use Twitter, add your own Twitter keys to `assets/oauth_consumer.properties`.
 
 
