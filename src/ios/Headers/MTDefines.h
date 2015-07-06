@@ -11,7 +11,7 @@
 #import <AddressBook/AddressBook.h>
 
 #define kLocalizedTable @"MTMovintracks"
-#define kSdkVersionText	@"1.8"
+#define kSdkVersionText	@"1.9"
 
 typedef void (^MTOnFacebookWebLogin)(BOOL); /**< Code block to manage When user was login to webview */
 typedef void (^MTRequestCompletionHandler)(BOOL, NSError*); /**< Code block to manage when a request was completed */
@@ -31,6 +31,7 @@ typedef enum : NSUInteger {
 @class MTPoint;
 @class UIView;
 @class MTAbstractSocialNetwork;
+@class MTLaunchContext;
 
 /**
  * The protocol that should be implemented by a trigger
@@ -69,6 +70,13 @@ typedef enum : NSUInteger {
  * Dismiss the action if it is showing something
  */
 - (void) dismiss;
+
+/**
+ * Run the action and notify to the app using the blockCode completed
+ *
+ * @param completed The block code to notify the \ref MTCampaignManager that has completed the action
+ */
+- (void) performActionOnComplete: (MTOnCompletionHandler) completed withContext: (MTLaunchContext*) context;
 @end
 
 /**
@@ -157,15 +165,6 @@ typedef enum : NSUInteger {
  * @param onCompletion the completion handler to call when this view was clossed
  */
 - (void) openPerson: (ABRecordRef) person withCompletionHandler: (MTOnCompletionHandler) onCompletion;
-
-/**
- * Open a webview to made like in facebook at the page url.
- *
- * @param page The page url using string
- * @param appId An nsstring with the facebook Application ID
- * @param onCompletion the completion handler to call when this view was clossed
- */
-- (void) facebookLike: (NSString*) page withAppId: (NSString*) appId andCompletionHandler: (MTOnCompletionHandler) onCompletion;
 
 /**
  * Open a pickImageViewController to publish this image on social profiles
