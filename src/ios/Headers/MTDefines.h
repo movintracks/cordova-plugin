@@ -11,7 +11,7 @@
 #import <AddressBook/AddressBook.h>
 
 #define kLocalizedTable @"MTMovintracks"
-#define kSdkVersionText	@"1.9"
+#define kSdkVersionText	@"1.10"
 
 typedef void (^MTOnFacebookWebLogin)(BOOL); /**< Code block to manage When user was login to webview */
 typedef void (^MTRequestCompletionHandler)(BOOL, NSError*); /**< Code block to manage when a request was completed */
@@ -58,6 +58,12 @@ typedef enum : NSUInteger {
  * @param completed The block code to notify the \ref MTCampaignManager that has completed the action
  */
 - (void) performActionOnComplete: (MTOnCompletionHandler) completed;
+
+/**
+ * True if the action is silent, false otherwise.
+ */
+- (BOOL) isSilent;
+
 @optional
 /**
  * @brief used to check if the action has all the data
