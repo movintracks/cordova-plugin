@@ -156,7 +156,7 @@ public class MovintracksPlugin extends CordovaPlugin{
             int iBeaconsAvailable = Movintracks.getInstance().beaconsAvailable();
             JSONObject json = new JSONObject();
             json.put(LocalConstants.KEY_BEACONS_AVAILABLE, iBeaconsAvailable);
-            callbackContext.success(json.toString());
+            callbackContext.success(json);
             Log.e(TAG, String.format("----------------------------------------> iBeaconsAvailable: %d", iBeaconsAvailable));
         } catch (JSONException e) {
             Utils.error(callbackContext, "Error while obtaining available beacons");
@@ -169,7 +169,7 @@ public class MovintracksPlugin extends CordovaPlugin{
             int deviceId = Movintracks.getInstance().getDeviceID();
             JSONObject json = new JSONObject();
             json.put(LocalConstants.KEY_DEVICE_ID, deviceId);
-            callbackContext.success(json.toString());
+            callbackContext.success(json);
             Log.e(TAG, String.format("----------------------------------------> deviceId: %d", deviceId));
         } catch (JSONException e) {
             Utils.error(callbackContext, "Error while obtaining deviceId");

@@ -7,7 +7,7 @@ repositories {
 
 dependencies {    
     compile(name:'sdk-movintracks', ext:'aar')
-    compile 'com.facebook.android:facebook-android-sdk:4.1.1'
+    compile 'com.facebook.android:facebook-android-sdk:4.4.0'
     compile(name:'androidBeaconLibrary', ext:'aar')
     compile 'com.android.support:support-v4:22.0.0'
     compile 'com.google.code.gson:gson:2.3'

@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="com.movintracks.cordovamovintracks"
-        version="1.5">
+        version="1.6">
     <engines>
         <engine name="cordova" version=">=3.0.0" />
     </engines>
@@ -22,8 +22,6 @@
             </feature>
         </config-file>
 
-        <preference name="FACEBOOK_ID" />
-
         <source-file src="src/android/libs/androidBeaconLibrary.aar" target-dir="libs" framework="true" />
         <source-file src="src/android/libs/sdk-movintracks.aar" target-dir="libs" framework="true" />
         <source-file src="src/android/src/LocalConstants.java" target-dir="src/com/movintracks/cordovamovintracks" />
@@ -38,11 +36,6 @@
         <source-file src="oauth_consumer.properties" target-dir="assets/" />
         <source-file src="movintracks.json" target-dir="assets/" />
         <resource-file src="src/android/res/activity_webview.xml" target="res/layout/activity_webview.xml" />
-        <resource-file src="src/android/res/facebook_id.xml" target="res/values/facebook_id.xml" />
-        <config-file target="res/values/facebook_id.xml" parent="/*">
-            <string name="fb_app_id">$FACEBOOK_ID</string>
-        </config-file>
-
 
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -72,8 +65,6 @@
                 android:name="com.movintracks.cordovamovintracks.WebViewActivity"
                 android:label="">
             </activity>
-            <activity android:name="com.facebook.FacebookActivity" />
-            <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/fb_app_id" />
             <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 
             <!--
@@ -114,8 +105,6 @@
             </feature>
         </config-file>
 
-        <preference name="FACEBOOK_ID" />
-
         <!-- Import frameworks -->
         <framework src="Accounts.framework" />
         <framework src="AddressBook.framework" />
@@ -154,10 +143,6 @@
         <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
             <string>Please allow this app to listen to iBeacons.</string>
         </config-file>
-
-	<config-file target="*-Info.plist" parent="FacebookAppID" after="NSLocationAlwaysUsageDescription">
-		<string>$FACEBOOK_ID</string>
-	</config-file>
 
         <config-file target="*-Info.plist" parent="UIBackgroundModes">
         	<array>

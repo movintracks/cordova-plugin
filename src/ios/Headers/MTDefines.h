@@ -11,7 +11,7 @@
 #import <AddressBook/AddressBook.h>
 
 #define kLocalizedTable @"MTMovintracks"
-#define kSdkVersionText	@"1.10"
+#define kSdkVersionText	@"1.11"
 
 typedef void (^MTOnFacebookWebLogin)(BOOL); /**< Code block to manage When user was login to webview */
 typedef void (^MTRequestCompletionHandler)(BOOL, NSError*); /**< Code block to manage when a request was completed */
@@ -206,8 +206,9 @@ typedef enum : NSUInteger {
  * @param campaign Campaign to check and notify using the correct policy
  * @param point The point that launch this campaign, used in save_data delivery
  * @param launchTime If the notification will be launched with a delay it should be the time to launch the notification, otherwise nil
+ * @param beaconId The beacon that launch this campaign
  */
-- (void) launchNotification: (MTCampaign*) campaign inPoint: (MTPoint*) point withAfterTime: (NSDate*) launchTime;
+- (void) launchNotification: (MTCampaign*) campaign inPoint: (MTPoint*) point withAfterTime: (NSDate*) launchTime andBeaconId: (NSUInteger) beaconId;
 
 /**
  * Used to notify to user about a new campaign or a campaign is current running
@@ -215,8 +216,9 @@ typedef enum : NSUInteger {
  * @param campaign Campaign to notify
  * @param actionNum number of action to launch when user click this campaign.
  * @param point The point that launch this campaign, used in save_data delivery
+ * @param beaconId The beacon that launch this campaign
  */
-- (void) launchNotification: (MTCampaign*) campaign forAction: (NSUInteger) actionNum inPoint: (MTPoint*) point;
+- (void) launchNotification: (MTCampaign*) campaign forAction: (NSUInteger) actionNum inPoint: (MTPoint*) point andBeaconId: (NSUInteger) beaconId;
 
 //! @}
 

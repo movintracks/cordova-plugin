@@ -18,23 +18,21 @@ Installation
 Add the plugin to a project.
 With Phonegap:
 
-    $ phonegap local plugin add https://github.com/movintracks/cordova-plugin --variable FACEBOOK_ID=<your fb app id>
+    $ phonegap local plugin add https://github.com/movintracks/cordova-plugin
     
 With Cordova:
 
-    $ cordova plugin add https://github.com/movintracks/cordova-plugin --variable FACEBOOK_ID=<your fb app id>
-
-`FACEBOOK_ID` must be defined for the plugin to be installed.
+    $ cordova plugin add https://github.com/movintracks/cordova-plugin
 
 Usage
 ----------
 There are several options available at the JavaScript layer after importing the Movintracks module.
 
-#### Module initialization 
+## Module initialization 
 
     var movintracks = cordova.require("cordova/plugin/movintracks");
 
-#### Movintracks instantiation  
+## Movintracks instantiation  
 
     movintracks.init(
 		function() {
@@ -76,16 +74,16 @@ For iOS:
   5. Expand the Copy Bundle Resources
   6. Add movintracks.json file
 
-####  Force download data  
+##  Force download data  
     movintracks.downloadData();
 
-####  Get number of beacons available
+##  Get number of beacons available
     movintracks.getBeaconsAvailable();
         
-####  Get the device ID
+##  Get the device ID
     movintracks.getDeviceId();
 
-####  Set callback for 'custom callback' SDK feature
+##  Set callback for 'custom callback' SDK feature
 	var customCallBackName = {"name":"<callback id>"};
 	movintracks.customCallBackAction(
 	    customCallBackName,
@@ -104,7 +102,7 @@ For iOS:
 
 Find a demo project in `/demo`
 
-#### Compile and run 
+## Compile and run 
 
 Build and run the application for all platforms.
  
@@ -118,7 +116,7 @@ Compiling for Android requires Gradle:
 
     $ ANDROID_BUILD=gradle cordova run android
 
-### Required changes for Android 
+## Required changes for Android 
 - Add to AndroidManifest.xml, in the `<application>` tag:
 
         android:name="com.movintracks.cordovamovintracks.MovintracksApp"
@@ -126,12 +124,21 @@ Compiling for Android requires Gradle:
 - If you would like to use Twitter, add your own Twitter keys to `assets/oauth_consumer.properties`.
 
 
-### Required changes for iOS
+## Required changes for iOS
 - Open Xcode project and go to AppDelegate.m
 - Add `#import "AppDelegate+Movintracks.h"`
 - Add to `didReceiveLocalNotification` method:
 
 		[self.movintracks applicationDidReceiveLocalNotification:notification];
 
-#### Optional changes for iOS 
-If code in the client app calls directly components in libraries used by the Movintracks SDK (e.g. AFNetworking, NSData+MD5Digest, MWFeedParser), open the xcode project and import manually their header files included in `sdk-ios/include/ExternalLibs`. 
+- In your .plist create a key called **FacebookAppID** with a string value. If you don't want to use Facebook actions, leave the value empty.
+
+## Optional changes for iOS 
+If code in the client app calls directly components in libraries used by the Movintracks SDK (e.g. AFNetworking, NSData+MD5Digest, MWFeedParser), open the xcode project and import manually their header files included in `sdk-ios/include/ExternalLibs`.
+
+## Using social actions with Facebook
+If you want to use social actions with Facebook, you will need to install a Facebook Plugin that it uses Facebook's SDK v4.4. Movintracks SDK requires **user_likes** permission for Follow social profile action and **publish_actions** for Post social message action.
+
+## Troubleshooting
+**Post an image to a social profile** action is disabled in Cordova plugin.
+

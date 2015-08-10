@@ -26,8 +26,9 @@
 
 /**
  * The customer ID used on Movintracks API
+ * @deprecated Use getDeviceId instead.
  */
-@property(readonly) NSString* customerID;
+@property(readonly) NSString* customerID __deprecated;
 
 /**
  * Create a Movintracks instance with basic configuration of the services

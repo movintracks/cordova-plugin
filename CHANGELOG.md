@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 1.6.0 (August 10, 2015)
+
+* Supports iOS 1.11 Movintracks SDK and android 1.11 SDK.
+
 ## Version 1.5.0 (July 20, 2015)
 
 * Supports iOS 1.10 Movintracks SDK and android 1.10 SDK.
